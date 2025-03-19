@@ -1,0 +1,79 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed; /* Stick the header to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure the header stays above other content */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Add a blurred background using ::before */
+.header::before {
+  backdrop-filter: blur(4px); /* Blur effect */
+  background: hsla(0, 0%, 100%, 0.8); /* Semi-transparent white */
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1; /* Place the blurred background behind the header content */
+}
+
+/* Add a shadow when scrolling */
+.header.scrolled {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  z-index: 10; /* Ensure the logo is above the blurred background */
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center; /* Center the nav links */
+  align-items: center;
+  gap: 2rem;
+  flex: 1; /* Allow the nav to take up remaining space */
+  margin: 0 auto; /* Center the nav */
+  max-width: 600px; /* Limit the width of the nav */
+  z-index: 10; /* Ensure the nav links are above the blurred background */
+}
+
+.navLink {
+  color: #e83e8c; /* Mid-pink */
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #6f42c1; /* Purple */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .nav {
+    gap: 1rem;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+  }
+}

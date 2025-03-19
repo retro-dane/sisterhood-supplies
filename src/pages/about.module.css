@@ -1,0 +1,27 @@
+/* about.module.css */
+.main {
+    padding: 2rem;
+  }
+  
+  .team {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .team h2 {
+    font-size: 2rem;
+    color: #333; /* Purple */
+  }
+  
+  .team p {
+    font-size: 1.2rem;
+    color: #e83e8c;
+  }
+  
+  .teamImage {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 2rem;
+  }
+  

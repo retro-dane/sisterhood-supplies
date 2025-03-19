@@ -1,128 +1,61 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+import React from 'react';
+import Header from '../components/Header/header';
+import Footer from '../components/Footer/footer';
+import * as styles from './index.module.css';
+import haircare from '../images/black-girl-hair-care.jpg';
+import { Link } from 'gatsby';
 
 const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+  <div className={styles.container}>
+    <Header />
+    <main className={styles.main}>
+      <section className={styles.hero}>
+        <div className={styles.heroContent}>
+          <h1>Welcome to Sisterhood Supplies</h1>
+          <p>Providing hair care services for underprivileged girls.</p>
+          <Link to="/contact" className={styles.ctaButton}>
+            Get in Touch
+          </Link>
+        </div>
+        <img src={haircare} height={400} alt="Placeholder" className={styles.heroImage} />
+      </section>
+      <section className={styles.mission}>
+        <h2>Our Mission</h2>
+        <p>We are dedicated to empowering underprivileged girls through hair care services, helping them feel confident and beautiful.</p>
+      </section>
+      <section className={styles.servicesPreview}>
+        <h2>Our Services</h2>
+        <div className={styles.serviceCards}>
+          <div className={styles.serviceCard}>
+            <h3>Haircuts</h3>
+            <p>Professional haircuts tailored to each girl’s needs.</p>
+          </div>
+          <div className={styles.serviceCard}>
+            <h3>Hair Styling</h3>
+            <p>Creative and trendy hairstyles for all occasions.</p>
+          </div>
+          <div className={styles.serviceCard}>
+            <h3>Hair Treatments</h3>
+            <p>Nourishing treatments to keep hair healthy and strong.</p>
+          </div>
+        </div>
+      </section>
+      <section className={styles.testimonials}>
+        <h2>What People Are Saying</h2>
+        <div className={styles.testimonialCards}>
+          <div className={styles.testimonialCard}>
+            <p>"Sisterhood Supplies has made a huge difference in our community. The girls feel so confident and beautiful!"</p>
+            <p className={styles.author}>— Jane Doe</p>
+          </div>
+          <div className={styles.testimonialCard}>
+            <p>"The team is amazing and truly cares about the girls they serve. Highly recommend!"</p>
+            <p className={styles.author}>— John Smith</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+);
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
-
-export default IndexPage
+export default IndexPage;

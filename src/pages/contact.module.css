@@ -1,0 +1,81 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contactForm {
+    text-align: center;
+  }
+  
+  .contactForm p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .form {
+    background-color: #fff3f8; /* Light pink background */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .formGroup label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e83e8c; /* Purple */
+    margin-bottom: 0.5rem;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .formGroup input:focus,
+  .formGroup textarea:focus {
+    border-color: #e83e8c; /* Mid-pink */
+    outline: none;
+  }
+  
+  .formGroup textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  .submitButton {
+    background-color: #e83e8c; /* Mid-pink */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #6f42c1; /* Purple */
+  }
