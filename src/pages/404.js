@@ -4,12 +4,12 @@ import { Link } from 'gatsby';
 
 const NotFoundPage = () => {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>404 - Page Not Found</h1>
-      <p className={styles.message}>
+    <div >
+      <h1 >404 - Page Not Found</h1>
+      <p >
         Oops! The page you're looking for doesn't exist.
       </p>
-      <Link to="/" className={styles.homeLink}>
+      <Link to="/" >
         Go back to the homepage
       </Link>
     </div>
