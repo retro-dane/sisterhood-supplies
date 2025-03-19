@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Link } from 'gatsby';
-import * as styles from '../styles/404.module.css'; // Optional: Add custom styles
 
 const NotFoundPage = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
-import * as styles from './Header.module.css';
+import * as styles from './header.module.css';
 import logo from '../../images/sisterhood-supplies-logo.jpeg';
 
 const Header = () => {
